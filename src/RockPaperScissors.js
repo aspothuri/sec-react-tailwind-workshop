@@ -39,8 +39,7 @@ const RockPaperScissors = () => {
                         key={option.name}
                         className="btn"
                         onClick={() => handlePlayerChoice(option.name)}>
-                        {option.emoji}
-                        {option.name}
+                        {`${option.emoji} ${option.name}`}
                     </button>
                 ))}
             </div>
