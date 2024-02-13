@@ -51,8 +51,8 @@ const TicTacToe = () => {
 
     return (
         <div className="container flex flex-col items-center justify-center">
-            <h1 className="font-bold text-xl mb-4">Tic Tac Toe</h1>
-            <div className="grid grid-cols-3 gap-2">
+            <h1 className="text-xl font-bold">Tic Tac Toe</h1>
+            <div className="grid grid-cols-3 gap-2 my-4">
                 {[Array(9).fill(null).map((_, i) => renderSquare(i))]}
             </div>
             <div className={`mt-4 text-xl ${winner ? "text-green-600 font-bold" : ""}`}>{status}</div>
