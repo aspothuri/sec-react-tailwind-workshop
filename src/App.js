@@ -1,24 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import TicTacToe from './TicTacToe';
+import RockPaperScissors from './RockPaperScissors';
+import Hangman from './Hangman';
+import { useState } from 'react';
 
 function App() {
+  const games = ["Tic Tac Toe", "Rock Paper Scissors", "Hangman"];
+  const [currentGame, setCurrentGame] = useState(null);
+
+  const renderGame = () => {
+    switch (currentGame) {
+      case "Tic Tac Toe":
+        return <TicTacToe />;
+      case "Rock Paper Scissors":
+        return <RockPaperScissors />;
+      case "Hangman":
+        return <Hangman />;
+      default:
+        return null;
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="bg-slate-200 h-screen text-center text-teal-700">
+      <h1 className="text-4xl font-bold pt-4">Choose a Game</h1>
+      <div>
+        {games.map((game) => (
+          <button
+            key={game}
+            className={`btn ${currentGame === game ? "bg-gradient-to-r from-purple-500 to-pink-500" : ""}`}
+            onClick={() => setCurrentGame(game)}
+          >
+            {game}
+          </button>
+        ))}
+      </div>
+      <div className="my-16">
+        {renderGame()}
+      </div>
+    </div >
   );
 }
 
