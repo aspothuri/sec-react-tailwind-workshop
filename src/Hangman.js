@@ -64,6 +64,6 @@ const Hangman = () => {
             </button>
         </div>
     );
-};
+}
 
 export default Hangman;

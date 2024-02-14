@@ -23,13 +23,13 @@ function App() {
 
   return (
     <div className="bg-slate-200 h-screen text-center text-teal-700">
-      <h1 className="text-4xl font-bold pt-4">Choose a Game</h1>
       <div>
+        <h1 className="text-4xl font-bold pt-4">Choose a Game</h1>
         {games.map((game) => (
           <button
             key={game}
-            className={`btn ${currentGame === game ? "bg-gradient-to-r from-purple-500 to-pink-500" : ""}`}
             onClick={() => setCurrentGame(game)}
+            className={`btn ${currentGame === game ? "bg-gradient-to-r from-purple-500 to-pink-500" : ""}`}
           >
             {game}
           </button>
@@ -38,7 +38,7 @@ function App() {
       <div className="my-16">
         {renderGame()}
       </div>
-    </div >
+    </div>
   );
 }
 

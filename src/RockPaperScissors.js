@@ -65,9 +65,9 @@ const RockPaperScissors = () => {
                         }>
                         Reset
                     </button>
-                </div >
+                </div>
             }
-        </div >
+        </div>
     );
 }
 

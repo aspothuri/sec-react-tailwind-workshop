@@ -12,7 +12,7 @@ const TicTacToe = () => {
         squaresCopy[i] = xIsNext ? '❌' : '⭕️';
         setSquares(squaresCopy);
         setXIsNext(!xIsNext);
-    }
+    };
 
     const calculateWinner = (squares) => {
         const lines = [
@@ -34,7 +34,7 @@ const TicTacToe = () => {
         }
 
         return null;
-    }
+    };
 
     const winner = calculateWinner(squares);
 
