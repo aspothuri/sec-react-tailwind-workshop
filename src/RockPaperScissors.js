@@ -16,16 +16,22 @@ const RockPaperScissors = () => {
         setPlayerChoice(option);
         const computerChoice = options[Math.floor(Math.random() * options.length)];
         setComputerChoice(computerChoice.name);
-        if (option == computerChoice.name) {
-            setResult(<p className="text-xl font-bold">It's a tie!</p>);
+        if (option === computerChoice.name) {
+            setResult(
+                <p className="text-xl font-bold">It's a tie!</p>
+            );
         } else if (
-            (option == "Rock" && computerChoice.name === "Scissors") ||
-            (option == "Paper" && computerChoice.name === "Rock") ||
-            (option == "Scissors" && computerChoice.name === "Paper")
+            (option === "Rock" && computerChoice.name === "Scissors") ||
+            (option === "Paper" && computerChoice.name === "Rock") ||
+            (option === "Scissors" && computerChoice.name === "Paper")
         ) {
-            setResult(<p className="text-xl text-green-600 font-bold">You win!</p>);
+            setResult(
+                <p className="text-xl text-green-600 font-bold">You win!</p>
+            );
         } else {
-            setResult(<p className="text-xl text-red-600 font-bold">Computer wins!</p>);
+            setResult(
+                <p className="text-xl text-red-600 font-bold">Computer wins!</p>
+            );
         }
         setGameDone(true);
     };
@@ -45,8 +51,8 @@ const RockPaperScissors = () => {
             </div>
             {gameDone &&
                 <div>
-                    <p className="text-xl mb-2">You chose: {options.find(option => option.name == playerChoice).emoji} {playerChoice}</p>
-                    <p className="text-xl mb-2">Computer chose: {options.find(option => option.name == computerChoice).emoji} {computerChoice}</p>
+                    <p className="text-xl mb-2">You chose: {options.find(option => option.name === playerChoice).emoji} {playerChoice}</p>
+                    <p className="text-xl mb-2">Computer chose: {options.find(option => option.name === computerChoice).emoji} {computerChoice}</p>
                     {result}
                     <button
                         className="btn"

@@ -9,19 +9,9 @@ const TicTacToe = () => {
         if (calculateWinner(squaresCopy) || squaresCopy[i]) {
             return;
         }
-        squaresCopy[i] = xIsNext ? 'X' : 'O';
+        squaresCopy[i] = xIsNext ? '❌' : '⭕️';
         setSquares(squaresCopy);
         setXIsNext(!xIsNext);
-    }
-
-    const renderSquare = (i) => {
-        const icon = squares[i] == "X" ? "❌" : squares[i] == "O" ? "⭕️" : null;
-        return (
-            <button className="w-16 h-16 border border-black flex items-center justify-center text-3xl"
-                onClick={() => handleClick(i)}>
-                {icon}
-            </button>
-        );
     }
 
     const calculateWinner = (squares) => {
@@ -47,15 +37,29 @@ const TicTacToe = () => {
     }
 
     const winner = calculateWinner(squares);
-    const status = winner ? `${winner} wins!` : `Next player: ${xIsNext ? 'X' : 'O'}`;
 
     return (
         <div className="container flex flex-col items-center justify-center">
             <h1 className="text-xl font-bold">Tic Tac Toe</h1>
-            <div className="grid grid-cols-3 gap-2 my-4">
-                {[Array(9).fill(null).map((_, i) => renderSquare(i))]}
+            <div className="grid grid-cols-3 gap-1 my-4">
+                {squares.map((_, i) => (
+                    <button className="size-16 rounded-xl shadow hover:ring ring-teal-400/30 border-2 border-teal-700 text-3xl"
+                        onClick={() => handleClick(i)}>
+                        {squares[i]}
+                    </button>
+                ))}
             </div>
-            <div className={`mt-4 text-xl ${winner ? "text-green-600 font-bold" : ""}`}>{status}</div>
+
+            {winner ? (
+                <p className="mt-4 text-xl text-green-600 font-bold">
+                    {winner} wins!
+                </p>
+            ) : (
+                <p className="mt-4 text-xl">
+                    {`Next player: ${xIsNext ? '❌' : '⭕️'}`}
+                </p>
+            )}
+
             <button
                 className="btn"
                 onClick={() => setSquares(Array(9).fill(null))}>

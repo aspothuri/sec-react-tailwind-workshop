@@ -4,6 +4,7 @@ const Hangman = () => {
     const wordBank = ['HANGMAN', 'REACT', 'JAVASCRIPT', 'DEVELOPER', 'COMPUTER', 'KEYBOARD', 'INTERNET', 'PROGRAMMING', 'CODING', 'ALGORITHM'];
     const [word, setWord] = useState(wordBank[Math.floor(Math.random() * wordBank.length)]);
     const [guessedLetters, setGuessedLetters] = useState([]);
+    const maskedWord = word.replace(/\w/g, (letter) => (guessedLetters.includes(letter) ? letter : '_'));
     const [wrongGuesses, setWrongGuesses] = useState(0);
 
     const handleGuess = (letter) => {
@@ -15,25 +16,21 @@ const Hangman = () => {
         }
     };
 
-    const maskedWord = word.replace(/\w/g, (letter) => (guessedLetters.includes(letter) ? letter : '_'));
-
     const isGameWon = [...word].every((letter) => guessedLetters.includes(letter));
     const isGameLost = wrongGuesses >= 6;
 
     return (
         <div className="container mx-auto mt-8 text-center">
-            <h1 className="text-xl font-bold mb-4">Hangman</h1>
-            <div className="mb-4 h-9">
-                {Array.from({ length: wrongGuesses }, (_, i) => (
-                    <span>💀</span>
-                ))}
+            <h1 className="text-xl font-bold">Hangman</h1>
+            <div className="my-4 h-9 text-3xl">
+                {'💀'.repeat(wrongGuesses)}
             </div>
-            <div className="mb-4">
+            <div>
                 {maskedWord.split('').map((letter, index) => (
-                    <span key={index} className="mr-2">{letter}</span>
+                    <span key={index} className="mx-2 text-xl">{letter}</span>
                 ))}
             </div>
-            <div className="mb-4">
+            <div className="my-4">
                 {Array.from({ length: 26 }, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i)).map((letter) => (
                     <button
                         key={letter}
@@ -45,8 +42,16 @@ const Hangman = () => {
                     </button>
                 ))}
             </div>
-            {isGameWon && <p className="text-xl text-green-600 font-bold">You win!</p>}
-            {isGameLost && <p className="text-xl text-red-600 font-bold">You lose! The word was "{word}".</p>}
+            {isGameWon &&
+                <p className="text-xl text-green-600 font-bold">
+                    You win!
+                </p>
+            }
+            {isGameLost &&
+                <p className="text-xl text-red-600 font-bold">
+                    You lose! The word was "{word}".
+                </p>
+            }
             <button
                 className="btn"
                 onClick={() => {
