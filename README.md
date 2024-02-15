@@ -2,7 +2,9 @@
 
 Created for UF Software Engineering Club Spring 2024 Workshop #3: React + Tailwind.
 
-Find instruction docs [here](https://docs.google.com/document/d/172SOIx3-Dt_ICFWEvVisyZxn9TjdWb6DUrs34ckhtuM/edit).
+[Instruction Docs](https://docs.google.com/document/d/172SOIx3-Dt_ICFWEvVisyZxn9TjdWb6DUrs34ckhtuM/edit)
+
+[Workshop Recording](https://youtu.be/xBPBlIDLyXo?si=kLUN_n_IukYEKgwm)
 
 # Quickstart
 1. Clone the repository to your machine.
