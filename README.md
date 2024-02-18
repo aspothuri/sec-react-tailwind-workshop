@@ -1,10 +1,18 @@
 # SEC React + Tailwind Workshop
 
-Created for UF Software Engineering Club Spring 2024 Workshop #3: React + Tailwind.
+Simple React webpage for Tic Tac Toe, Rock Paper Scissors, and Hangman. Created for **UF Software Engineering Club's** Spring 2024 React + Tailwind Workshop.
 
-[Instruction Docs](https://docs.google.com/document/d/172SOIx3-Dt_ICFWEvVisyZxn9TjdWb6DUrs34ckhtuM/edit)
+[![Workshop Recording](https://img.youtube.com/vi/xBPBlIDLyXo/0.jpg)<br>Workshop Recording](https://www.youtube.com/watch?v=xBPBlIDLyXo&ab_channel=UFSoftwareEngineeringClub)
 
-[Workshop Recording](https://youtu.be/xBPBlIDLyXo?si=kLUN_n_IukYEKgwm)
+[Instruction Document](https://docs.google.com/document/d/172SOIx3-Dt_ICFWEvVisyZxn9TjdWb6DUrs34ckhtuM/edit)
+
+# Functions
+### Tic Tac Toe
+![Screenshot of Tic Tac Toe](public/TicTacToe.png)
+### Rock Paper Scissors
+![Screenshot of Rock Paper Scissors](public/RockPaperScissors.png)
+### Hangman
+![Screenshot of Hangman](public/Hangman.png)
 
 # Quickstart
 1. Clone the repository to your machine.
