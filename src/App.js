@@ -1,11 +1,10 @@
 import './App.css';
 import TicTacToe from './TicTacToe';
 import RockPaperScissors from './RockPaperScissors';
-import Hangman from './Hangman';
 import { useState } from 'react';
 
 function App() {
-  const games = ["Tic Tac Toe", "Rock Paper Scissors", "Hangman"];
+  const games = ["Tic Tac Toe", "Rock Paper Scissors"];
   const [currentGame, setCurrentGame] = useState(null);
 
   const renderGame = () => {
@@ -14,8 +13,6 @@ function App() {
         return <TicTacToe />;
       case "Rock Paper Scissors":
         return <RockPaperScissors />;
-      case "Hangman":
-        return <Hangman />;
       default:
         return null;
     }
